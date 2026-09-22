@@ -1,0 +1,5 @@
+/mtproto-mcp
+/dist/
+.codegraph/
+.DS_Store
+*.session.json
