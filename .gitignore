@@ -1,0 +1,5 @@
+/go-tg-mcp
+/dist/
+.codegraph/
+.DS_Store
+*.session.json
