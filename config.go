@@ -39,7 +39,7 @@ func loadConfig() (config, error) {
 	c.SessionPath = os.Getenv("TG_SESSION")
 	if c.SessionPath == "" {
 		home, _ := os.UserHomeDir()
-		c.SessionPath = filepath.Join(home, ".go-tg-mcp.session.json")
+		c.SessionPath = filepath.Join(home, ".mtproto-mcp.session.json")
 	}
 	return c, nil
 }

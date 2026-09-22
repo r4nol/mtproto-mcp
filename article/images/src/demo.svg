@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" font-family="Helvetica Neue, Helvetica, Arial">
+  <rect width="1400" height="860" fill="#0E1621"/>
+  <rect x="150" y="50" width="1100" height="760" rx="18" fill="#121C26" stroke="#2B3A4A"/>
+  <circle cx="185" cy="80" r="8" fill="#F85149"/><circle cx="212" cy="80" r="8" fill="#D29922"/><circle cx="239" cy="80" r="8" fill="#3FB950"/>
+  <text x="700" y="86" text-anchor="middle" font-size="16" fill="#8B9BAA">claude — ~/work</text>
+  <line x1="150" y1="110" x2="1250" y2="110" stroke="#2B3A4A"/>
+
+  <!-- user -->
+  <rect x="560" y="140" width="650" height="84" rx="16" fill="#2B3A4A"/>
+  <text x="585" y="175" font-size="20" fill="#E6EDF3">What did I miss in the team chats today? Summarize,</text>
+  <text x="585" y="205" font-size="20" fill="#E6EDF3">and reply "on it" to anything that's asking me directly.</text>
+
+  <!-- tool calls -->
+  <g font-family="Menlo, monospace" font-size="16">
+    <rect x="190" y="250" width="720" height="44" rx="10" fill="#17212B" stroke="#2B3A4A"/>
+    <circle cx="212" cy="272" r="6" fill="#3FB950"/>
+    <text x="230" y="278" fill="#C9D1D9">list_dialogs <tspan fill="#8B9BAA">{"limit": 30}</tspan></text>
+    <text x="890" y="278" text-anchor="end" fill="#8B9BAA">4 unread chats</text>
+
+    <rect x="190" y="304" width="720" height="44" rx="10" fill="#17212B" stroke="#2B3A4A"/>
+    <circle cx="212" cy="326" r="6" fill="#3FB950"/>
+    <text x="230" y="332" fill="#C9D1D9">get_history <tspan fill="#8B9BAA">{"peer": "channel:1893…"}</tspan></text>
+    <text x="890" y="332" text-anchor="end" fill="#8B9BAA">20 msgs</text>
+
+    <rect x="190" y="358" width="720" height="44" rx="10" fill="#17212B" stroke="#2B3A4A"/>
+    <circle cx="212" cy="380" r="6" fill="#3FB950"/>
+    <text x="230" y="386" fill="#C9D1D9">get_history <tspan fill="#8B9BAA">{"peer": "chat:4471…"}</tspan></text>
+    <text x="890" y="386" text-anchor="end" fill="#8B9BAA">12 msgs</text>
+
+    <rect x="190" y="412" width="720" height="44" rx="10" fill="#1F1A10" stroke="#D29922"/>
+    <circle cx="212" cy="434" r="6" fill="#D29922"/>
+    <text x="230" y="440" fill="#C9D1D9">send_message <tspan fill="#8B9BAA">{"reply_to": 5120, "text": "on it"}</tspan></text>
+    <text x="890" y="440" text-anchor="end" fill="#D29922">approve?</text>
+  </g>
+
+  <!-- answer -->
+  <g font-size="19" fill="#E6EDF3">
+    <text x="190" y="505" font-weight="bold" fill="#D97757">Claude</text>
+    <text x="190" y="540">Three things happened while you were away:</text>
+    <text x="210" y="578">•  <tspan font-weight="bold">#backend</tspan> — deploy to staging is blocked on the DB migration;</text>
+    <text x="230" y="606">Anna asked <tspan font-style="italic">you</tspan> to review PR 482 before 18:00.</text>
+    <text x="210" y="644">•  <tspan font-weight="bold">Design sync</tspan> — new onboarding mockups posted, no action needed.</text>
+    <text x="210" y="682">•  <tspan font-weight="bold">Ops alerts</tspan> — two disk-usage warnings, both auto-resolved.</text>
+    <text x="190" y="730">I've drafted an "on it" reply to Anna's message — approve the</text>
+    <text x="190" y="758">send_message call above and it goes out from your account.</text>
+  </g>
+</svg>

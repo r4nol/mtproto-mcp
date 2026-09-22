@@ -1,4 +1,4 @@
-module github.com/r4nol/go-tg-mcp
+module github.com/r4nol/mtproto-mcp
 
 go 1.26
 

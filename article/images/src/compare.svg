@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700" font-family="Helvetica Neue, Helvetica, Arial">
+  <rect width="1400" height="700" fill="#0E1621"/>
+  <text x="60" y="70" font-size="34" font-weight="bold" fill="#E6EDF3">Bot API vs. userbot</text>
+  <text x="60" y="106" font-size="20" fill="#8B9BAA">A bot only sees what is sent to it. A userbot sees what you see.</text>
+  <rect x="60" y="140" width="1280" height="520" rx="16" fill="#121C26" stroke="#2B3A4A"/>
+  <g font-size="21">
+    <text x="90" y="192" font-weight="bold" fill="#8B9BAA">Capability</text>
+    <text x="640" y="192" font-weight="bold" fill="#8B9BAA">Bot API bot</text>
+    <text x="1000" y="192" font-weight="bold" fill="#2AABEE">Userbot (go-tg-mcp)</text>
+    <line x1="80" y1="212" x2="1320" y2="212" stroke="#2B3A4A" stroke-width="2"/>
+  </g>
+  <g font-size="20" fill="#E6EDF3">
+    <text x="90" y="260">Read your existing private chats</text>
+    <text x="90" y="320">History from before it joined</text>
+    <text x="90" y="380">Search across all your chats</text>
+    <text x="90" y="440">Act in groups without being invited as a bot</text>
+    <text x="90" y="500">Messages appear from</text>
+    <text x="90" y="560">Auth</text>
+    <text x="90" y="620">Protocol</text>
+  </g>
+  <g font-size="20">
+    <text x="640" y="260" fill="#F85149">✗  no</text><text x="1000" y="260" fill="#3FB950">✓  yes</text>
+    <text x="640" y="320" fill="#F85149">✗  no</text><text x="1000" y="320" fill="#3FB950">✓  yes</text>
+    <text x="640" y="380" fill="#F85149">✗  no</text><text x="1000" y="380" fill="#3FB950">✓  search_global</text>
+    <text x="640" y="440" fill="#F85149">✗  no</text><text x="1000" y="440" fill="#3FB950">✓  yes, as you</text>
+    <text x="640" y="500" fill="#C9D1D9">a bot account</text><text x="1000" y="500" fill="#C9D1D9">you</text>
+    <text x="640" y="560" fill="#C9D1D9">token from @BotFather</text><text x="1000" y="560" fill="#C9D1D9">phone + code (+2FA)</text>
+    <text x="640" y="620" fill="#C9D1D9">HTTPS JSON</text><text x="1000" y="620" fill="#C9D1D9">MTProto (via gotd/td)</text>
+  </g>
+  <g stroke="#1E2A36" stroke-width="1.5">
+    <line x1="80" y1="285" x2="1320" y2="285"/><line x1="80" y1="345" x2="1320" y2="345"/><line x1="80" y1="405" x2="1320" y2="405"/>
+    <line x1="80" y1="465" x2="1320" y2="465"/><line x1="80" y1="525" x2="1320" y2="525"/><line x1="80" y1="585" x2="1320" y2="585"/>
+  </g>
+</svg>

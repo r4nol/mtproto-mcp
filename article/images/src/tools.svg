@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" font-family="Helvetica Neue, Helvetica, Arial">
+<rect width="1400" height="760" fill="#0E1621"/>
+<text x="70" y="70" font-size="34" font-weight="bold" fill="#E6EDF3">18 tools, four groups</text>
+<text x="70" y="106" font-size="20" fill="#8B9BAA">⚠ marks tools you should approve by hand: they delete, leak, or upload.</text>
+<rect x="70" y="145" width="300" height="580" rx="16" fill="#121C26" stroke="#2B3A4A"/>
+<rect x="70" y="145" width="300" height="8" rx="4" fill="#D29922"/>
+<text x="102" y="195" font-size="24" font-weight="bold" fill="#D29922">Auth</text>
+<text x="348" y="195" text-anchor="end" font-size="18" fill="#8B9BAA">4</text>
+<rect x="86" y="225" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="102" y="254" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">auth_status</text>
+<text x="102" y="278" font-size="15" fill="#8B9BAA">is the userbot logged in?</text>
+<rect x="86" y="307" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="102" y="336" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">auth_send_code</text>
+<text x="102" y="360" font-size="15" fill="#8B9BAA">request login code</text>
+<rect x="86" y="389" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="102" y="418" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">auth_sign_in</text>
+<text x="102" y="442" font-size="15" fill="#8B9BAA">submit the code</text>
+<rect x="86" y="471" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="102" y="500" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">auth_password</text>
+<text x="102" y="524" font-size="15" fill="#8B9BAA">2FA cloud password</text>
+<rect x="390" y="145" width="300" height="580" rx="16" fill="#121C26" stroke="#2B3A4A"/>
+<rect x="390" y="145" width="300" height="8" rx="4" fill="#3FB950"/>
+<text x="412" y="195" font-size="24" font-weight="bold" fill="#3FB950">Read</text>
+<text x="668" y="195" text-anchor="end" font-size="18" fill="#8B9BAA">6</text>
+<rect x="406" y="225" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="422" y="254" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">get_me</text>
+<text x="422" y="278" font-size="15" fill="#8B9BAA">who am I</text>
+<rect x="406" y="307" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="422" y="336" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">resolve_peer</text>
+<text x="422" y="360" font-size="15" fill="#8B9BAA">@name / phone / t.me → peer</text>
+<rect x="406" y="389" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="422" y="418" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">list_dialogs</text>
+<text x="422" y="442" font-size="15" fill="#8B9BAA">chats + unread counts</text>
+<rect x="406" y="471" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="422" y="500" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">get_history</text>
+<text x="422" y="524" font-size="15" fill="#8B9BAA">messages, paged by offset_id</text>
+<rect x="406" y="553" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="422" y="582" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">search_messages</text>
+<text x="422" y="606" font-size="15" fill="#8B9BAA">search one chat</text>
+<rect x="406" y="635" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="422" y="664" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">search_global</text>
+<text x="422" y="688" font-size="15" fill="#8B9BAA">search every chat</text>
+<rect x="710" y="145" width="300" height="580" rx="16" fill="#121C26" stroke="#2B3A4A"/>
+<rect x="710" y="145" width="300" height="8" rx="4" fill="#2AABEE"/>
+<text x="732" y="195" font-size="24" font-weight="bold" fill="#2AABEE">Write</text>
+<text x="988" y="195" text-anchor="end" font-size="18" fill="#8B9BAA">6</text>
+<rect x="726" y="225" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="742" y="254" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">send_message</text>
+<text x="742" y="278" font-size="15" fill="#8B9BAA">text, optional reply_to</text>
+<rect x="726" y="307" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="742" y="336" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">edit_message</text>
+<text x="742" y="360" font-size="15" fill="#8B9BAA">edit your message</text>
+<rect x="726" y="389" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="742" y="418" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">delete_messages</text>
+<text x="742" y="442" font-size="15" fill="#8B9BAA">for everyone by default</text>
+<text x="976" y="431" text-anchor="middle" font-size="22" fill="#F85149">⚠</text>
+<rect x="726" y="471" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="742" y="500" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">forward_messages</text>
+<text x="742" y="524" font-size="15" fill="#8B9BAA">chat → chat</text>
+<text x="976" y="513" text-anchor="middle" font-size="22" fill="#F85149">⚠</text>
+<rect x="726" y="553" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="742" y="582" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">send_reaction</text>
+<text x="742" y="606" font-size="15" fill="#8B9BAA">emoji reaction</text>
+<rect x="726" y="635" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="742" y="664" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">mark_read</text>
+<text x="742" y="688" font-size="15" fill="#8B9BAA">clear unread</text>
+<rect x="1030" y="145" width="300" height="580" rx="16" fill="#121C26" stroke="#2B3A4A"/>
+<rect x="1030" y="145" width="300" height="8" rx="4" fill="#C9A0FF"/>
+<text x="1052" y="195" font-size="24" font-weight="bold" fill="#C9A0FF">Media</text>
+<text x="1308" y="195" text-anchor="end" font-size="18" fill="#8B9BAA">2</text>
+<rect x="1046" y="225" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="1062" y="254" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">send_file</text>
+<text x="1062" y="278" font-size="15" fill="#8B9BAA">upload local file</text>
+<text x="1296" y="267" text-anchor="middle" font-size="22" fill="#F85149">⚠</text>
+<rect x="1046" y="307" width="268" height="68" rx="10" fill="#17212B"/>
+<text x="1062" y="336" font-family="Menlo, monospace" font-size="17" font-weight="bold" fill="#E6EDF3">download_media</text>
+<text x="1062" y="360" font-size="15" fill="#8B9BAA">save photo / document</text>
+</svg>

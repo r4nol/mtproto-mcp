@@ -1,6 +1,6 @@
-# go-tg-mcp
+# mtproto-mcp
 
-[![ci](https://github.com/r4nol/go-tg-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/r4nol/go-tg-mcp/actions/workflows/ci.yml)
+[![ci](https://github.com/r4nol/mtproto-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/r4nol/mtproto-mcp/actions/workflows/ci.yml)
 
 MCP server that exposes a Telegram **userbot** (a real user account over MTProto, not the Bot API) as tools for Claude and other MCP clients.
 
@@ -32,10 +32,10 @@ Messages come back as JSON with `id`, `date`, `out`, `from`, `chat`, `text`, and
 
 ## Install
 
-Download a binary from [Releases](https://github.com/r4nol/go-tg-mcp/releases), or:
+Download a binary from [Releases](https://github.com/r4nol/mtproto-mcp/releases), or:
 
 ```bash
-go install github.com/r4nol/go-tg-mcp@latest
+go install github.com/r4nol/mtproto-mcp@latest
 ```
 
 ## Setup
@@ -47,11 +47,11 @@ go install github.com/r4nol/go-tg-mcp@latest
 {
   "mcpServers": {
     "telegram": {
-      "command": "/absolute/path/to/go-tg-mcp",
+      "command": "/absolute/path/to/mtproto-mcp",
       "env": {
         "TG_API_ID": "1234567",
         "TG_API_HASH": "abcdef0123456789abcdef0123456789",
-        "TG_SESSION": "/absolute/path/.go-tg-mcp.session.json"
+        "TG_SESSION": "/absolute/path/.mtproto-mcp.session.json"
       }
     }
   }
@@ -61,14 +61,14 @@ go install github.com/r4nol/go-tg-mcp@latest
 Claude Code one-liner:
 
 ```bash
-claude mcp add telegram -e TG_API_ID=1234567 -e TG_API_HASH=abcdef... -- /absolute/path/to/go-tg-mcp
+claude mcp add telegram -e TG_API_ID=1234567 -e TG_API_HASH=abcdef... -- /absolute/path/to/mtproto-mcp
 ```
 
 | Env | Required | Default |
 |-----|----------|---------|
 | `TG_API_ID` | yes | |
 | `TG_API_HASH` | yes | |
-| `TG_SESSION` | no | `~/.go-tg-mcp.session.json` |
+| `TG_SESSION` | no | `~/.mtproto-mcp.session.json` |
 | `TG_PHONE` | no | prompted by `login` |
 
 ### Login
@@ -85,13 +85,13 @@ The session persists to `TG_SESSION`, so later runs are already authorized. Othe
 Or log in from a terminal (same session file, keeps your 2FA password out of the chat transcript):
 
 ```bash
-TG_API_ID=... TG_API_HASH=... go-tg-mcp login
+TG_API_ID=... TG_API_HASH=... mtproto-mcp login
 ```
 
 ## Build
 
 ```bash
-go build -o go-tg-mcp .
+go build -o mtproto-mcp .
 go test ./...
 ```
 

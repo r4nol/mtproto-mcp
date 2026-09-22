@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" font-family="Helvetica Neue, Helvetica, Arial">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C9D1D9"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8B9BAA"/></marker>
+  <marker id="c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2AABEE"/></marker></defs>
+  <rect width="1400" height="760" fill="#0E1621"/>
+  <text x="60" y="70" font-size="34" font-weight="bold" fill="#E6EDF3">Login happens inside the chat</text>
+  <text x="60" y="106" font-size="20" fill="#8B9BAA">The server boots unauthenticated and exposes the MTProto login flow as four tools.</text>
+
+  <!-- lifelines -->
+  <g text-anchor="middle" font-size="20" font-weight="bold">
+    <rect x="130" y="140" width="220" height="50" rx="10" fill="#17212B" stroke="#D97757" stroke-width="2"/><text x="240" y="172" fill="#D97757">You + Claude</text>
+    <rect x="590" y="140" width="220" height="50" rx="10" fill="#17212B" stroke="#00ADD8" stroke-width="2"/><text x="700" y="172" fill="#00ADD8">go-tg-mcp</text>
+    <rect x="1050" y="140" width="220" height="50" rx="10" fill="#17212B" stroke="#2AABEE" stroke-width="2"/><text x="1160" y="172" fill="#2AABEE">Telegram</text>
+  </g>
+  <g stroke="#2B3A4A" stroke-width="2" stroke-dasharray="6 6">
+    <line x1="240" y1="190" x2="240" y2="730"/><line x1="700" y1="190" x2="700" y2="730"/><line x1="1160" y1="190" x2="1160" y2="730"/>
+  </g>
+
+  <g font-family="Menlo, monospace" font-size="16">
+    <!-- 1 -->
+    <line x1="245" y1="240" x2="692" y2="240" stroke="#C9D1D9" stroke-width="2.5" marker-end="url(#a)"/>
+    <text x="260" y="230" fill="#E6EDF3">1  auth_status</text>
+    <line x1="695" y1="275" x2="248" y2="275" stroke="#8B9BAA" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#b)"/>
+    <text x="680" y="267" text-anchor="end" fill="#8B9BAA">"not authorized"</text>
+
+    <!-- 2 -->
+    <line x1="245" y1="335" x2="692" y2="335" stroke="#C9D1D9" stroke-width="2.5" marker-end="url(#a)"/>
+    <text x="260" y="325" fill="#E6EDF3">2  auth_send_code {phone}</text>
+    <line x1="705" y1="335" x2="1152" y2="335" stroke="#C9D1D9" stroke-width="2.5" marker-end="url(#a)"/>
+    <text x="720" y="325" fill="#C9D1D9">auth.sendCode</text>
+    <line x1="1155" y1="370" x2="708" y2="370" stroke="#8B9BAA" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#b)"/>
+    <text x="1140" y="362" text-anchor="end" fill="#8B9BAA">phone_code_hash (kept in memory)</text>
+    <line x1="1155" y1="435" x2="250" y2="435" stroke="#2AABEE" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#c)"/>
+    <text x="470" y="425" text-anchor="middle" font-family="Helvetica Neue, Arial" font-size="15" fill="#2AABEE">code arrives in your Telegram app</text>
+
+    <!-- 3 -->
+    <line x1="245" y1="505" x2="692" y2="505" stroke="#C9D1D9" stroke-width="2.5" marker-end="url(#a)"/>
+    <text x="260" y="495" fill="#E6EDF3">3  auth_sign_in {code}</text>
+    <line x1="705" y1="505" x2="1152" y2="505" stroke="#C9D1D9" stroke-width="2.5" marker-end="url(#a)"/>
+    <text x="720" y="495" fill="#C9D1D9">auth.signIn</text>
+    <line x1="1155" y1="540" x2="708" y2="540" stroke="#8B9BAA" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#b)"/>
+    <text x="1140" y="532" text-anchor="end" fill="#8B9BAA">SESSION_PASSWORD_NEEDED ?</text>
+
+    <!-- 4 optional -->
+    <rect x="200" y="570" width="1010" height="100" rx="12" fill="none" stroke="#D29922" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="215" y="592" font-family="Helvetica Neue, Arial" font-size="14" font-weight="bold" fill="#D29922">only if 2FA is on</text>
+    <line x1="245" y1="625" x2="692" y2="625" stroke="#C9D1D9" stroke-width="2.5" marker-end="url(#a)"/>
+    <text x="260" y="615" fill="#E6EDF3">4  auth_password {password}</text>
+    <line x1="705" y1="625" x2="1152" y2="625" stroke="#C9D1D9" stroke-width="2.5" marker-end="url(#a)"/>
+    <text x="720" y="615" fill="#C9D1D9">SRP check</text>
+
+    <!-- done -->
+    <rect x="560" y="690" width="280" height="44" rx="22" fill="#12301C" stroke="#3FB950" stroke-width="2"/>
+    <text x="700" y="718" text-anchor="middle" fill="#3FB950">"logged in" → session.json</text>
+  </g>
+</svg>

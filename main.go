@@ -39,7 +39,7 @@ func serve(cfg config) error {
 	}
 	defer tc.Stop()
 
-	s := server.NewMCPServer("go-tg-mcp", version,
+	s := server.NewMCPServer("mtproto-mcp", version,
 		server.WithToolCapabilities(true))
 	registerAuthTools(s, tc)
 	registerTools(s, tc)

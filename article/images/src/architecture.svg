@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" font-family="Helvetica Neue, Helvetica, Arial">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8B9BAA"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="860" fill="#0E1621"/>
+  <text x="60" y="70" font-size="34" font-weight="bold" fill="#E6EDF3">How go-tg-mcp is wired</text>
+  <text x="60" y="106" font-size="20" fill="#8B9BAA">One process. The MCP side speaks stdio, the Telegram side holds a single long-lived MTProto connection.</text>
+
+  <!-- client -->
+  <rect x="60" y="200" width="250" height="300" rx="18" fill="#17212B" stroke="#D97757" stroke-width="3"/>
+  <text x="185" y="245" text-anchor="middle" font-size="24" font-weight="bold" fill="#D97757">MCP client</text>
+  <text x="185" y="280" text-anchor="middle" font-size="18" fill="#C9D1D9">Claude Code</text>
+  <text x="185" y="308" text-anchor="middle" font-size="18" fill="#C9D1D9">Claude Desktop</text>
+  <text x="185" y="336" text-anchor="middle" font-size="18" fill="#C9D1D9">Cursor, Zed, …</text>
+  <text x="185" y="430" text-anchor="middle" font-size="16" fill="#8B9BAA">spawns the binary,</text>
+  <text x="185" y="452" text-anchor="middle" font-size="16" fill="#8B9BAA">talks over stdin/stdout</text>
+
+  <!-- arrow client <-> server -->
+  <line x1="315" y1="350" x2="405" y2="350" stroke="#8B9BAA" stroke-width="3" marker-start="url(#a)" marker-end="url(#a)"/>
+  <text x="360" y="332" text-anchor="middle" font-family="Menlo, monospace" font-size="14" fill="#8B9BAA">JSON-RPC</text>
+
+  <!-- process -->
+  <rect x="410" y="150" width="620" height="560" rx="22" fill="#121C26" stroke="#00ADD8" stroke-width="3" stroke-dasharray="10 6"/>
+  <text x="440" y="190" font-family="Menlo, monospace" font-size="22" font-weight="bold" fill="#00ADD8">go-tg-mcp process</text>
+
+  <rect x="440" y="215" width="560" height="80" rx="12" fill="#17212B" stroke="#2B3A4A"/>
+  <text x="465" y="250" font-size="20" font-weight="bold" fill="#E6EDF3">mcp-go server</text>
+  <text x="465" y="277" font-family="Menlo, monospace" font-size="15" fill="#8B9BAA">server.ServeStdio(s) — tool schemas + dispatch</text>
+
+  <line x1="720" y1="298" x2="720" y2="322" stroke="#8B9BAA" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="440" y="325" width="560" height="110" rx="12" fill="#17212B" stroke="#2B3A4A"/>
+  <text x="465" y="358" font-size="20" font-weight="bold" fill="#E6EDF3">Tool handlers</text>
+  <g font-family="Menlo, monospace" font-size="14">
+    <rect x="465" y="375" width="80" height="30" rx="6" fill="#1F2D3A"/><text x="505" y="395" text-anchor="middle" fill="#D29922">auth_*</text>
+    <rect x="555" y="375" width="100" height="30" rx="6" fill="#1F2D3A"/><text x="605" y="395" text-anchor="middle" fill="#3FB950">read</text>
+    <rect x="665" y="375" width="100" height="30" rx="6" fill="#1F2D3A"/><text x="715" y="395" text-anchor="middle" fill="#2AABEE">write</text>
+    <rect x="775" y="375" width="100" height="30" rx="6" fill="#1F2D3A"/><text x="825" y="395" text-anchor="middle" fill="#C9A0FF">media</text>
+    <text x="890" y="395" fill="#8B9BAA">ensureAuth()</text>
+  </g>
+  <text x="465" y="425" font-size="14" fill="#8B9BAA">every result → compact JSON the model can reason over</text>
+
+  <line x1="720" y1="438" x2="720" y2="462" stroke="#8B9BAA" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="440" y="465" width="560" height="220" rx="12" fill="#17212B" stroke="#2B3A4A"/>
+  <text x="465" y="498" font-size="20" font-weight="bold" fill="#E6EDF3">tgClient</text>
+  <text x="465" y="524" font-size="15" fill="#8B9BAA">gotd's client.Run blocks, so it lives in a goroutine</text>
+  <text x="465" y="546" font-size="15" fill="#8B9BAA">and signals "connected" through a channel.</text>
+  <rect x="465" y="565" width="250" height="100" rx="10" fill="#1F2D3A"/>
+  <text x="590" y="597" text-anchor="middle" font-size="17" font-weight="bold" fill="#E6EDF3">peers.Manager</text>
+  <text x="590" y="622" text-anchor="middle" font-size="14" fill="#8B9BAA">caches access hashes</text>
+  <text x="590" y="644" text-anchor="middle" font-size="14" fill="#8B9BAA">from every response</text>
+  <rect x="730" y="565" width="250" height="100" rx="10" fill="#1F2D3A"/>
+  <text x="855" y="597" text-anchor="middle" font-size="17" font-weight="bold" fill="#E6EDF3">auth state</text>
+  <text x="855" y="622" text-anchor="middle" font-size="14" fill="#8B9BAA">phone + code hash,</text>
+  <text x="855" y="644" text-anchor="middle" font-size="14" fill="#8B9BAA">mutex-guarded</text>
+
+  <!-- session file -->
+  <line x1="720" y1="714" x2="720" y2="770" stroke="#8B9BAA" stroke-width="3" marker-start="url(#a)" marker-end="url(#a)"/>
+  <rect x="560" y="775" width="320" height="52" rx="10" fill="#2A1F14" stroke="#D29922" stroke-width="2"/>
+  <text x="720" y="808" text-anchor="middle" font-family="Menlo, monospace" font-size="16" fill="#D29922">TG_SESSION (session.json)</text>
+
+  <!-- arrow server <-> telegram -->
+  <line x1="1034" y1="575" x2="1126" y2="575" stroke="#8B9BAA" stroke-width="3" marker-end="url(#a)" marker-start="url(#a)"/>
+  <text x="1080" y="605" text-anchor="middle" font-family="Menlo, monospace" font-size="14" fill="#8B9BAA">MTProto</text>
+
+  <!-- telegram -->
+  <rect x="1130" y="415" width="230" height="320" rx="18" fill="#17212B" stroke="#2AABEE" stroke-width="3"/>
+  <circle cx="1245" cy="505" r="42" fill="#2AABEE"/>
+  <path d="M1224 504 L1266 487 L1258 526 L1244 516 L1236 524 L1235 512 L1256 493 L1232 509 Z" fill="#fff"/>
+  <text x="1245" y="590" text-anchor="middle" font-size="24" font-weight="bold" fill="#2AABEE">Telegram DC</text>
+  <text x="1245" y="625" text-anchor="middle" font-size="17" fill="#C9D1D9">logged in as you,</text>
+  <text x="1245" y="650" text-anchor="middle" font-size="17" fill="#C9D1D9">not as a bot</text>
+</svg>

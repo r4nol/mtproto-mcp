@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E1621"/><stop offset="1" stop-color="#17212B"/>
+    </linearGradient>
+    <linearGradient id="wire" gradientUnits="userSpaceOnUse" x1="200" y1="0" x2="1200" y2="0">
+      <stop offset="0" stop-color="#D97757"/><stop offset="0.5" stop-color="#00ADD8"/><stop offset="1" stop-color="#2AABEE"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.3" fill="#243241"/>
+    </pattern>
+  </defs>
+  <rect width="1400" height="700" fill="url(#bg)"/>
+  <rect width="1400" height="700" fill="url(#dots)"/>
+
+  <text x="90" y="150" font-family="Helvetica Neue, Helvetica, Arial" font-size="22" letter-spacing="4" fill="#8B9BAA">GO · MTPROTO · MODEL CONTEXT PROTOCOL</text>
+  <text x="90" y="235" font-family="Helvetica Neue, Helvetica, Arial" font-weight="bold" font-size="76" fill="#E6EDF3">Give Claude a real</text>
+  <text x="90" y="320" font-family="Helvetica Neue, Helvetica, Arial" font-weight="bold" font-size="76" fill="#E6EDF3">Telegram account</text>
+  <text x="90" y="380" font-family="Helvetica Neue, Helvetica, Arial" font-size="30" fill="#8B9BAA">go-tg-mcp — a userbot MCP server in one static binary</text>
+
+  <!-- pipeline -->
+  <line x1="200" y1="540" x2="1200" y2="540" stroke="url(#wire)" stroke-width="6" stroke-linecap="round"/>
+  <g font-family="Helvetica Neue, Helvetica, Arial" text-anchor="middle">
+    <circle cx="200" cy="540" r="66" fill="#1E2A36" stroke="#D97757" stroke-width="5"/>
+    <g transform="translate(200 540)" fill="#D97757">
+      <!-- starburst -->
+      <g>
+        <rect x="-4" y="-34" width="8" height="68" rx="4"/>
+        <rect x="-4" y="-34" width="8" height="68" rx="4" transform="rotate(45)"/>
+        <rect x="-4" y="-34" width="8" height="68" rx="4" transform="rotate(90)"/>
+        <rect x="-4" y="-34" width="8" height="68" rx="4" transform="rotate(135)"/>
+      </g>
+    </g>
+    <text x="200" y="640" font-size="24" fill="#E6EDF3">Claude</text>
+    <text x="200" y="668" font-size="18" fill="#8B9BAA">any MCP client</text>
+
+    <rect x="590" y="480" width="220" height="120" rx="22" fill="#1E2A36" stroke="#00ADD8" stroke-width="5"/>
+    <text x="700" y="532" font-family="Menlo, monospace" font-size="26" font-weight="bold" fill="#00ADD8">go-tg-mcp</text>
+    <text x="700" y="568" font-family="Menlo, monospace" font-size="17" fill="#8B9BAA">18 tools · stdio</text>
+    <text x="700" y="640" font-size="18" fill="#8B9BAA">~12 MB, zero runtime deps</text>
+
+    <circle cx="1200" cy="540" r="66" fill="#2AABEE"/>
+    <path d="M1168 538 L1232 512 L1220 572 L1198 556 L1186 568 L1184 550 L1216 522 L1180 546 Z" fill="#fff"/>
+    <text x="1200" y="640" font-size="24" fill="#E6EDF3">Telegram</text>
+    <text x="1200" y="668" font-size="18" fill="#8B9BAA">your user account</text>
+
+    <rect x="330" y="520" width="150" height="40" rx="20" fill="#0E1621" stroke="#2B3A4A"/>
+    <text x="405" y="547" font-family="Menlo, monospace" font-size="16" fill="#C9D1D9">JSON-RPC</text>
+    <rect x="920" y="520" width="150" height="40" rx="20" fill="#0E1621" stroke="#2B3A4A"/>
+    <text x="995" y="547" font-family="Menlo, monospace" font-size="16" fill="#C9D1D9">MTProto</text>
+  </g>
+</svg>
